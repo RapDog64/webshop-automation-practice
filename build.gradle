@@ -1,0 +1,79 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.8.1'
+}
+
+group 'org.demowebshop'
+version '1.2-SNAPSHOT'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    allureVersion = "2.14.0"
+    junitVersion = "5.7.2"
+    aspecjweaverVersion = "1.9.6"
+    selenideVersion = "5.23.0"
+    ownerVersion = "1.0.12"
+    slf4jVersion = "1.7.30"
+}
+
+dependencies {
+    testImplementation(
+            "com.codeborne:selenide:${selenideVersion}",
+            "io.qameta.allure:allure-selenide:${allureVersion}",
+            "io.qameta.allure:allure-java-commons:$allureVersion",
+            "org.aeonbits.owner:owner:${ownerVersion}",
+            "org.aspectj:aspectjweaver:${aspecjweaverVersion}",
+            "org.junit.jupiter:junit-jupiter-api:${junitVersion}" ,
+            "org.junit.jupiter:junit-jupiter-params:${junitVersion}"
+    )
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion", "org.slf4j:slf4j-simple:${slf4jVersion}")
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+tasks.withType(Test) {
+    systemProperties += System.properties
+    useJUnitPlatform()
+    System.setProperty("junit.jupiter.extensions.autodetection.enabled", "true")
+
+    if (System.getProperty("threads") != null) {
+        systemProperties += [
+                'junit.jupiter.execution.parallel.enabled'                 : true,
+                'junit.jupiter.execution.parallel.mode.default'            : 'concurrent',
+                'junit.jupiter.execution.parallel.mode.classes.default'    : 'concurrent',
+                'junit.jupiter.execution.parallel.config.strategy'         : 'fixed',
+                'junit.jupiter.execution.parallel.config.fixed.parallelism': System.getProperty("threads").toInteger()
+        ]
+    }
+
+    testLogging {
+        lifecycle {
+            exceptionFormat "short"
+        }
+    }
+}
+
+allure {
+    autoconfigure = true
+    aspectjweaver = true
+    configuration = "testImplementation"
+    version = "${allureVersion}"
+
+    useJUnit5 {
+        version = "${allureVersion}"
+    }
+}
