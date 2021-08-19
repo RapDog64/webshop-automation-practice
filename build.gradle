@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'org.demowebshop'
-version '1.2-SNAPSHOT'
+version '1.2'
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
@@ -14,24 +14,33 @@ repositories {
 }
 
 ext {
+    restAssuredVersion = "4.4.0"
     allureVersion = "2.14.0"
     junitVersion = "5.7.2"
     aspecjweaverVersion = "1.9.6"
     selenideVersion = "5.23.0"
     ownerVersion = "1.0.12"
     slf4jVersion = "1.7.30"
+    fakerVersion = "1.0.2"
 }
 
 dependencies {
+
     testImplementation(
             "com.codeborne:selenide:${selenideVersion}",
             "io.qameta.allure:allure-selenide:${allureVersion}",
             "io.qameta.allure:allure-java-commons:$allureVersion",
             "org.aeonbits.owner:owner:${ownerVersion}",
+            "io.rest-assured:rest-assured:${restAssuredVersion}",
+            "io.qameta.allure:allure-rest-assured:$allureVersion",
             "org.aspectj:aspectjweaver:${aspecjweaverVersion}",
             "org.junit.jupiter:junit-jupiter-api:${junitVersion}" ,
-            "org.junit.jupiter:junit-jupiter-params:${junitVersion}"
+            "org.junit.jupiter:junit-jupiter-params:${junitVersion}",
+            "com.github.javafaker:javafaker:${fakerVersion}"
     )
+
+    testCompileOnly "org.projectlombok:lombok:1.18.20"
+    testAnnotationProcessor "org.projectlombok:lombok:1.18.20"
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion", "org.slf4j:slf4j-simple:${slf4jVersion}")
 }
 
