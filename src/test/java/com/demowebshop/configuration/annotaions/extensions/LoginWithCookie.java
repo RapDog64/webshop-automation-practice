@@ -1,4 +1,4 @@
-package com.demowebshop.annotaions.extensions;
+package com.demowebshop.configuration.annotaions.extensions;
 
 import org.junit.jupiter.api.extension.ExtendWith;
 

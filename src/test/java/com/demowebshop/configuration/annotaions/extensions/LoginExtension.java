@@ -1,4 +1,4 @@
-package com.demowebshop.annotaions.extensions;
+package com.demowebshop.configuration.annotaions.extensions;
 
 import com.demowebshop.dao.UserRepository;
 import com.demowebshop.dao.UserRepositoryImpl;
@@ -20,24 +20,15 @@ public class LoginExtension implements BeforeEachCallback {
     private Authorization authorization = new Authorization();
 
     @Override
-    public void beforeEach(ExtensionContext context) throws Exception {
+    public void beforeEach(ExtensionContext context) {
         User user = userRepository.getUser();
         Response response = authorization.loginViaApi(user);
         Map<String, String> cookies = response.getCookies();
 
-
-/*        Map<String, String> cookies = given()
-                .contentType("application/x-www-form-urlencoded; charset=UTF-8")
-                .formParam("Email", user.getEmail())
-                .formParam("Password",  user.getPassword())
-                .when()
-                .post("http://demowebshop.tricentis.com/login")
-                .then()
-                .statusCode(302)
-                .log().body()
-                .extract().cookies();*/
-
         open("http://demowebshop.tricentis.com/Themes/DefaultClean/Content/images/mobile-menu-collapse.png");
-        getWebDriver().manage().addCookie(new Cookie("NOPCOMMERCE.AUTH", cookies.get("NOPCOMMERCE.AUTH")));
+
+        cookies.entrySet().stream().forEach(cookie -> {
+            getWebDriver().manage().addCookie(new Cookie("NOPCOMMERCE.AUTH", cookies.get("NOPCOMMERCE.AUTH")));
+        });
     }
 }

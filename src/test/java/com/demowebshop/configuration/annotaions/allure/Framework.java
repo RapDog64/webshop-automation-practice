@@ -1,4 +1,4 @@
-package com.demowebshop.annotaions.allure;
+package com.demowebshop.configuration.annotaions.allure;
 
 import io.qameta.allure.LabelAnnotation;
 
@@ -8,8 +8,6 @@ import java.lang.annotation.*;
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.TYPE})
-@Repeatable(JiraIssues.class)
 @LabelAnnotation(name = "jira")
-public @interface JiraIssue {
-    String value();
+public @interface Framework {
 }

@@ -18,15 +18,6 @@ import static io.qameta.allure.Allure.parameter;
 
 class LoginTests extends BaseTest {
 
-/*
-## API Tests
-
-// TODO: Send e-mail from product page with API
-// TODO: Add product to wishlist with API
-// TODO: Add product to cart with API
-
-*/
-
     @Test
     @DisplayName("Log in as a user")
     @Description("Log in as a user with valid credentials")
@@ -44,7 +35,6 @@ class LoginTests extends BaseTest {
         HeaderMenu headerMenu = new HeaderMenu();
         headerMenu.getProfileUserEmail().shouldHave(text(user.getEmail()));
     }
-
 
     @DisplayName("User should see unsuccessful login message")
     @Description("User should see unsuccessful login message if the credentials are invalid")
@@ -77,5 +67,4 @@ class LoginTests extends BaseTest {
         loginForm.getValidationErrorMessage()
                 .shouldHave(text("Please enter a valid email address."));
     }
-
 }

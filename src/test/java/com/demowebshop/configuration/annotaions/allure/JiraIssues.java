@@ -1,6 +1,4 @@
-package com.demowebshop.annotaions.allure;
-
-import com.demowebshop.annotaions.allure.JiraIssue;
+package com.demowebshop.configuration.annotaions.allure;
 
 import java.lang.annotation.*;
 

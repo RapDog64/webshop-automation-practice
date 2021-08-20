@@ -1,6 +1,6 @@
 package com.demowebshop.tests.ui;
 
-import com.demowebshop.annotaions.extensions.LoginWithCookie;
+import com.demowebshop.configuration.annotaions.extensions.LoginWithCookie;
 import com.demowebshop.page.MainPage;
 import com.demowebshop.page.ProductList;
 import com.demowebshop.page.ShoppingCartPage;

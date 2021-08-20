@@ -15,13 +15,12 @@ class WishlistTest extends BaseTest {
     @Description("Add product to wishlist with UI")
     void AddProductToWishlist() {
         String productName = "health";
-        open("" + productName);
+        open("/" + productName);
 
         ProductList productList = new ProductList();
         productList.addProductToWishlist();
 
         HeaderMenu headerMenu = new HeaderMenu();
         headerMenu.getProductQtyInWishlist().shouldHave(text("1"));
-
     }
 }

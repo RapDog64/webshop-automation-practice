@@ -1,16 +1,18 @@
 package com.demowebshop.service;
 
-import com.demowebshop.tests.api.spec.Specs;
 import io.restassured.response.Response;
 
+import static com.demowebshop.configuration.filters.AllureCustomFilter.allureLogFilter;
+import static com.demowebshop.tests.api.spec.Specs.requestSpecification;
+import static com.demowebshop.tests.api.spec.Specs.responseSpecification;
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.responseSpecification;
 
 public class ProductService {
 
     public Response addProductViaApi(int qtyItems) {
         return given()
-                .spec(Specs.requestSpecification)
+                .filter(allureLogFilter().withCustomTemplate())
+                .spec(requestSpecification)
                 .body("addtocart_31.EnteredQuantity=" + qtyItems)
                 .when()
                 .post("/addproducttocart/details/31/1")
