@@ -16,5 +16,4 @@ public class User {
             gender,
             password,
             confirmPassword;
-
 }

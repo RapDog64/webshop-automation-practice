@@ -1,19 +1,35 @@
 package com.demowebshop.tests.ui;
 
+import com.demowebshop.configuration.annotaions.allure.Layer;
 import com.demowebshop.model.User;
 import com.demowebshop.page.MainPage;
 import com.demowebshop.tests.BaseTest;
 import com.demowebshop.utility.UserGenerator;
 import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.open;
 
+@Layer("web")
+@Owner("Alex")
+@Feature("Subscribe")
 class SubscribeTest extends BaseTest {
 
     @Test
-    @Description("Subscribe to the newsletter")
+    @Story("Subscribe to the newsletter")
+    @Tags({@Tag("web"), @Tag("regress")})
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Subscribe to the newsletter via UI")
+    @DisplayName("Subscribe to the newsletter")
     void subscribeToTheNewsletter() {
         User user = UserGenerator.generateValidUser();
 
