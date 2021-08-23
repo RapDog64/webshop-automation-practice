@@ -65,18 +65,4 @@ class ShoppingCartTest extends BaseTest {
         ShoppingCartPage shoppingCartPage = new ShoppingCartPage();
         shoppingCartPage.verifyTheProductInTheShoppingCart(productName);
     }
-
-
-/*    private Response addProductToCart(int qtyItems) {
-        return given()
-                .contentType("application/x-www-form-urlencoded; charset=UTF-8")
-                .body("addtocart_31.EnteredQuantity=" + qtyItems)
-                .when()
-                .post(BASE_URL + "/addproducttocart/details/31/1")
-                .then()
-                .assertThat()
-                .statusCode(200)
-                .extract()
-                .response();
-    }*/
 }

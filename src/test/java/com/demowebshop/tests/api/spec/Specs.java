@@ -6,18 +6,17 @@ import io.restassured.filter.log.LogDetail;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
+import static com.demowebshop.configuration.env.ApplicationConfigImpl.config;
 import static io.restassured.RestAssured.with;
 
 public class Specs {
 
     public static RequestSpecification requestSpecification = with()
-            .baseUri("http://demowebshop.tricentis.com")
+            .baseUri(config.apiUrl())
             .contentType("application/x-www-form-urlencoded; charset=UTF-8")
-            .filter(AllureCustomFilter.allureLogFilter().withCustomTemplate())
             .log().all();
 
     public static ResponseSpecification responseSpecification = new ResponseSpecBuilder()
             .log(LogDetail.ALL)
             .build();
-
 }

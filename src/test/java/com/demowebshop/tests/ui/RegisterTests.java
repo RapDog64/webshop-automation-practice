@@ -24,7 +24,6 @@ class RegisterTests extends BaseTest {
                 .typeLastName(user.getLastname())
                 .typePassword(user.getPassword())
                 .typeConfirmPassword(user.getConfirmPassword())
-              //  .clickRegister()
                 .getSuccessfulRegistrationMessage().shouldHave(text("Your registration completed"));
 
         HeaderMenu headerMenu = new HeaderMenu();

@@ -2,8 +2,6 @@
 
 ## UI Tests
 
-### Main Page tests
-
 :white_check_mark: UI Register a new user    
 :white_check_mark: UI login test    
 :white_check_mark: UI login test with incorrect credentials    

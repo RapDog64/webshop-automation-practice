@@ -17,7 +17,6 @@ public class ProductService {
                 .when()
                 .post("/addproducttocart/details/31/1")
                 .then()
-                .assertThat()
                 .spec(responseSpecification)
                 .statusCode(200)
                 .extract()
