@@ -1,5 +1,6 @@
 package com.demowebshop.service;
 
+import io.qameta.allure.Step;
 import io.restassured.response.Response;
 
 import static com.demowebshop.configuration.filters.AllureCustomFilter.allureLogFilter;
@@ -9,6 +10,8 @@ import static io.restassured.RestAssured.given;
 
 public class ProductService {
 
+
+    @Step("add product to cart")
     public Response addProductViaApi(int qtyItems) {
         return given()
                 .filter(allureLogFilter().withCustomTemplate())

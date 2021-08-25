@@ -24,8 +24,6 @@ class ApiLoginTests {
     private final UserRepository userRepository = new UserRepositoryImpl();
     private final Authorization authorization = new Authorization();
 
-    //TODO: test annotaions
-
     @Test
     @Tags({@Tag("web"), @Tag("regress"), @Tag("prod")})
     @Severity(SeverityLevel.CRITICAL)

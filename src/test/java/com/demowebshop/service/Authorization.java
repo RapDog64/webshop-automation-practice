@@ -2,6 +2,7 @@ package com.demowebshop.service;
 
 import com.demowebshop.model.User;
 import com.demowebshop.tests.api.spec.Specs;
+import io.qameta.allure.Step;
 import io.restassured.response.Response;
 
 import static com.demowebshop.configuration.filters.AllureCustomFilter.allureLogFilter;
@@ -9,6 +10,7 @@ import static io.restassured.RestAssured.given;
 
 public class Authorization {
 
+    @Step("Log in as a user")
     public Response loginViaApi(User user) {
         return given()
                 .filter(allureLogFilter().withCustomTemplate())
