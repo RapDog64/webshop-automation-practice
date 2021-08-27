@@ -1,7 +1,6 @@
 package com.demowebshop.tests.ui;
 
 import com.demowebshop.configuration.annotaions.allure.Layer;
-import com.demowebshop.page.component.HeaderMenu;
 import com.demowebshop.page.ProductList;
 import com.demowebshop.tests.BaseTest;
 import io.qameta.allure.Description;
@@ -31,12 +30,10 @@ class WishlistTest extends BaseTest {
     @DisplayName("Add product to wishlist")
     void AddProductToWishlist() {
         String productName = "health";
-        open("/" + productName);
 
-        ProductList productList = new ProductList();
-        productList.addProductToWishlist();
-
-        HeaderMenu headerMenu = new HeaderMenu();
-        headerMenu.getProductQtyInWishlist().shouldHave(text("1"));
+        ProductList productList = open("/" + productName, ProductList.class);
+        productList.addProductToWishlist()
+                .getHeaderMenu()
+                .getProductQtyInWishlist().shouldHave(text("2"));
     }
 }

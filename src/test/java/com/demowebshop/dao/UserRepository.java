@@ -1,8 +1,15 @@
 package com.demowebshop.dao;
 
+import com.demowebshop.configuration.database.CustomDatabase;
 import com.demowebshop.model.User;
 
-public interface UserRepository {
+public class UserRepository {
 
-    User getUser();
+    public User getUser() {
+       return CustomDatabase.getInstance()
+               .getUsers()
+               .stream()
+               .findFirst()
+               .orElseThrow(IllegalArgumentException::new);
+    }
 }

@@ -1,6 +1,5 @@
 package com.demowebshop.tests.api.spec;
 
-import com.demowebshop.configuration.filters.AllureCustomFilter;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.specification.RequestSpecification;

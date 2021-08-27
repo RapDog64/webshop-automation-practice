@@ -31,12 +31,13 @@ class SubscribeTest extends BaseTest {
     @Description("Subscribe to the newsletter via UI")
     @DisplayName("Subscribe to the newsletter")
     void subscribeToTheNewsletter() {
+        final String expectedMessage = "Thank you for signing up! A verification email has been sent. We appreciate your interest.";
         User user = UserGenerator.generateValidUser();
 
-        open("/", MainPage.class)
-                .typeEmailIntoNewsLetterField(user.getEmail())
+        MainPage mainPage = open("/", MainPage.class);
+        mainPage.typeEmailIntoNewsLetterField(user.getEmail())
                 .clickSubscribeButton()
                 .getSubscribeMessage()
-                .shouldHave(text("Thank you for signing up! A verification email has been sent. We appreciate your interest."));
+                .shouldHave(text(expectedMessage));
     }
 }

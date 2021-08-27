@@ -1,5 +1,6 @@
 package com.demowebshop.page;
 
+import com.demowebshop.page.component.LoginForm;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
@@ -9,19 +10,27 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class ShoppingCartPage {
 
+    @Step("Get login form")
+    public LoginForm getLoginForm() {
+        return new LoginForm();
+    }
+
     @Step("Click checkout button")
-    public void clickCheckoutButton() {
+    public ShoppingCartPage clickCheckoutButton() {
         $("#checkout").shouldBe(visible).click();
+        return this;
     }
 
     @Step("Accept policy")
-    public void acceptPolicy() {
+    public ShoppingCartPage acceptPolicy() {
         $("#termsofservice").shouldBe(visible).click();
+        return this;
     }
 
 
     @Step("Verify '{productName}' in the shopping cart")
-    public void verifyTheProductInTheShoppingCart(String productName) {
+    public ShoppingCartPage verifyTheProductInTheShoppingCart(String productName) {
         $$(".cart-item-row").find(text(productName)).shouldBe(visible);
+        return this;
     }
 }

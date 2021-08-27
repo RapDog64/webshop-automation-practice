@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
+import static java.lang.String.format;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -36,6 +37,6 @@ class AddProductTests {
         AddProductResponse productResponse = response.as(AddProductResponse.class);
 
         assertTrue(productResponse.isSuccess());
-        assertEquals(String.format("(%s)", qtyItems), productResponse.getUpdatetopcartsectionhtml());
+        assertEquals(format("(%s)", qtyItems), productResponse.getUpdatetopcartsectionhtml());
     }
 }

@@ -2,7 +2,6 @@ package com.demowebshop.tests.api;
 
 import com.demowebshop.configuration.annotaions.allure.Layer;
 import com.demowebshop.dao.UserRepository;
-import com.demowebshop.dao.UserRepositoryImpl;
 import com.demowebshop.model.User;
 import com.demowebshop.service.Authorization;
 import io.qameta.allure.Feature;
@@ -21,7 +20,7 @@ import org.junit.jupiter.api.Test;
 @Feature("")
 class ApiLoginTests {
 
-    private final UserRepository userRepository = new UserRepositoryImpl();
+    private final UserRepository userRepository = new UserRepository();
     private final Authorization authorization = new Authorization();
 
     @Test
@@ -30,7 +29,7 @@ class ApiLoginTests {
     @DisplayName("verify status code is 302")
     void verifyStatusCodeIs302() {
         User user = userRepository.getUser();
-        Response response = authorization.loginViaApi(user);
+        Response response = authorization.loginViaApi(user.getEmail(), user.getPassword());
 
         Assertions.assertEquals("text/html; charset=utf-8", response.getContentType());
         Assertions.assertEquals(302, response.statusCode());

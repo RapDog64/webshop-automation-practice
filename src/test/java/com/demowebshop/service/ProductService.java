@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 public class ProductService {
 
 
-    @Step("add product to cart")
+    @Step("add '{qtyItems}' product(s) to cart")
     public Response addProductViaApi(int qtyItems) {
         return given()
                 .filter(allureLogFilter().withCustomTemplate())

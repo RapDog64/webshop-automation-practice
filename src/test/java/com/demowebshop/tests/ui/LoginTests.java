@@ -83,6 +83,6 @@ class LoginTests extends BaseTest {
         loginForm.typeUserPassword(password);
         loginForm.clickLogIn();
         loginForm.getValidationErrorMessage()
-                .shouldHave(text("Please enter a valid email address."));
+                .shouldHave(text("Please enter email address."));
     }
 }
