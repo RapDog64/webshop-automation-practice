@@ -19,6 +19,7 @@ import static com.codeborne.selenide.Selenide.open;
 @Layer("web")
 @Owner("Denis")
 @Feature("Navigation menu")
+@DisplayName("Navigation menu")
 class NavigationMenuTests extends BaseTest {
 
     @Test

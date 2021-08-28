@@ -21,6 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @Layer("api")
 @Owner("Alex")
 @Feature("Shopping cart")
+@DisplayName("Shopping cart")
 class AddProductTests {
 
     private final ProductService productService = new ProductService();

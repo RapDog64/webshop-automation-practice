@@ -23,6 +23,7 @@ import static com.demowebshop.model.HeaderMenuSections.SHOPPING_CART;
 @Layer("web")
 @Owner("Denis")
 @Feature("Shopping cart")
+@DisplayName("Shopping cart")
 class ShoppingCartTest extends BaseTest {
 
     @Test

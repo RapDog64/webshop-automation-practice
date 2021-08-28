@@ -27,6 +27,7 @@ import static io.qameta.allure.Allure.parameter;
 @Layer("web")
 @Owner("Denis")
 @Feature("Authentication")
+@DisplayName("Authentication")
 class LoginTests extends BaseTest {
 
     @Test
@@ -51,11 +52,11 @@ class LoginTests extends BaseTest {
     }
 
     @Story("Log in with incorrect credentials")
-    @CsvSource({"test@emial.com,TEST", "Java@emial.com, JAVA"})
     @DisplayName("User should see unsuccessful login message")
     @Description("User should see unsuccessful login message if the credentials are invalid")
     @Severity(SeverityLevel.NORMAL)
     @ParameterizedTest
+    @CsvSource({"test@emial.com,TEST", "Java@emial.com, JAVA"})
     void loginWithIncorrectCredentials(String email, String password) {
         parameter("user email", email);
         parameter("user password", password);
@@ -70,10 +71,10 @@ class LoginTests extends BaseTest {
 
     @Story("Log in with invalid credentials")
     @Severity(SeverityLevel.NORMAL)
-    @CsvSource({"test432423,TEST", "s##$@#$@#4@emial.com, TEST"})
     @DisplayName("User should see invalid Email format")
     @Description("User should see invalid Email format message if the email is not in the email format")
     @ParameterizedTest
+    @CsvSource({"test432423,TEST", "s##$@#$@#4@emial.com, TEST"})
     void loginWithInvalidEmailFormat(String email, String password) {
         parameter("user email", email);
         parameter("user password", password);

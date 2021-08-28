@@ -20,6 +20,7 @@ import static com.codeborne.selenide.Selenide.open;
 @Layer("web")
 @Owner("Alex")
 @Feature("Wishlist")
+@DisplayName("Wishlist")
 class WishlistTest extends BaseTest {
 
     @Test

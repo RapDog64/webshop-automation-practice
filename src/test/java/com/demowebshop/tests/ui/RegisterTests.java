@@ -24,14 +24,15 @@ import static com.codeborne.selenide.Selenide.open;
 @Layer("web")
 @Owner("Denis")
 @Feature("Registration")
+@DisplayName("Registration")
 class RegisterTests extends BaseTest {
 
     @Test
-    @Story("registration a new user")
+    @Story("Registration a new user")
     @Severity(SeverityLevel.CRITICAL)
     @Tags({@Tag("web"), @Tag("smoke")})
     @Description("Register a new user via UI")
-    @DisplayName("register a new user")
+    @DisplayName("Register a new user")
     void registerNewUser() {
         User user = UserGenerator.generateValidUser();
 
