@@ -9,9 +9,11 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class HeaderMenu {
 
+    public LoginForm loginForm = new LoginForm();
+
     @Step("Get log in form")
     public LoginForm getLoginForm() {
-        return  new LoginForm();
+        return loginForm;
     }
 
     @Step("Get registration form")

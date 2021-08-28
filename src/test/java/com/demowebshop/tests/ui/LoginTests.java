@@ -27,7 +27,7 @@ import static io.qameta.allure.Allure.parameter;
 @Layer("web")
 @Owner("Denis")
 @Feature("Authentication")
-@DisplayName("Authentication")
+@DisplayName("Authentication suite")
 class LoginTests extends BaseTest {
 
     @Test
@@ -54,6 +54,7 @@ class LoginTests extends BaseTest {
     @Story("Log in with incorrect credentials")
     @DisplayName("User should see unsuccessful login message")
     @Description("User should see unsuccessful login message if the credentials are invalid")
+    @Tags({@Tag("web"), @Tag("night")})
     @Severity(SeverityLevel.NORMAL)
     @ParameterizedTest
     @CsvSource({"test@emial.com,TEST", "Java@emial.com, JAVA"})
@@ -72,6 +73,7 @@ class LoginTests extends BaseTest {
     @Story("Log in with invalid credentials")
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("User should see invalid Email format")
+    @Tags({@Tag("web"), @Tag("smoke"), @Tag("prod")})
     @Description("User should see invalid Email format message if the email is not in the email format")
     @ParameterizedTest
     @CsvSource({"test432423,TEST", "s##$@#$@#4@emial.com, TEST"})

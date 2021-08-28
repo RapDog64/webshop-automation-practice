@@ -53,7 +53,6 @@ public class RegisterForm extends BasePage {
         } else if (gender.getGender().equalsIgnoreCase("female")) {
             $("#gender-female").click();
         }
-
         return this;
     }
 

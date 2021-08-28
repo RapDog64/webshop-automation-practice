@@ -16,7 +16,7 @@ ext {
     allureVersion = "2.13.9"
     junitVersion = "5.7.2"
     aspecjweaverVersion = "1.9.6"
-    selenideVersion = "5.23.0"
+    selenideVersion = "5.24.2"
     ownerVersion = "1.0.12"
     slf4jVersion = "1.7.30"
     fakerVersion = "1.0.2"
@@ -66,9 +66,9 @@ tasks.withType(JavaCompile) {
 }
 
 tasks.withType(Test) {
-    systemProperties(System.getProperties())
+    systemProperties += System.properties
     useJUnitPlatform()
-
+    System.setProperty("junit.jupiter.extensions.autodetection.enabled", "true")
     if (System.getProperty("threads") != null) {
         systemProperties += [
                 'junit.jupiter.execution.parallel.enabled'                 : true,
@@ -81,6 +81,7 @@ tasks.withType(Test) {
 
     testLogging {
         lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
     }

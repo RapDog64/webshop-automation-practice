@@ -7,12 +7,7 @@ import com.demowebshop.page.component.HeaderMenu;
 import com.demowebshop.page.component.RegisterForm;
 import com.demowebshop.tests.BaseTest;
 import com.demowebshop.utility.UserGenerator;
-import io.qameta.allure.Description;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Owner;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
@@ -24,12 +19,13 @@ import static com.codeborne.selenide.Selenide.open;
 @Layer("web")
 @Owner("Denis")
 @Feature("Registration")
-@DisplayName("Registration")
+@DisplayName("Registration suite")
 class RegisterTests extends BaseTest {
 
     @Test
     @Story("Registration a new user")
     @Severity(SeverityLevel.CRITICAL)
+    @Lead(value = "Denis")
     @Tags({@Tag("web"), @Tag("smoke")})
     @Description("Register a new user via UI")
     @DisplayName("Register a new user")

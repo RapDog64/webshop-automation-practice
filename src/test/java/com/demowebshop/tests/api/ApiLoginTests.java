@@ -18,7 +18,7 @@ import org.junit.jupiter.api.Test;
 @Layer("api")
 @Owner("Igor")
 @Feature("Authentication")
-@DisplayName("Authentication")
+@DisplayName("Authentication suite")
 class ApiLoginTests {
 
     private final UserRepository userRepository = new UserRepository();

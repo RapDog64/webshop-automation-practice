@@ -5,6 +5,7 @@ import com.demowebshop.model.api.AddProductResponse;
 import com.demowebshop.service.ProductService;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Lead;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -21,17 +22,18 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @Layer("api")
 @Owner("Alex")
 @Feature("Shopping cart")
-@DisplayName("Shopping cart")
+@DisplayName("Shopping cart suite")
 class AddProductTests {
 
     private final ProductService productService = new ProductService();
 
     @Test
     @Tags({@Tag("web"), @Tag("regress"), @Tag("prod")})
+    @Lead(value = "Denis")
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Add product to cart")
     @Description("Add product to cart via api")
-    void  addProductToCart() {
+    void addProductToCart() {
         int qtyItems = 2;
 
         Response response = productService.addProductViaApi(qtyItems);

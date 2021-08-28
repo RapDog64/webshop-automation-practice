@@ -25,7 +25,7 @@ import static com.codeborne.selenide.Selenide.open;
 @Layer("web")
 @Owner("Alex")
 @Feature("Checkout")
-@DisplayName("Checkout")
+@DisplayName("Checkout suite")
 class CheckoutTest extends BaseTest {
 
     @BeforeEach
@@ -40,6 +40,7 @@ class CheckoutTest extends BaseTest {
     @Tags({@Tag("web"), @Tag("regress"), @Tag("prod")})
     @Severity(SeverityLevel.BLOCKER)
     @Description(value = "validate the system displays log in form if an unauthorized user want to checkout the order.")
+    @DisplayName(value = "validate the system displays log in form")
     void validateTheSystemDisplaysLogInForm() {
         ShoppingCartPage shoppingCartPage = open("/cart", ShoppingCartPage.class);
         shoppingCartPage.acceptPolicy()

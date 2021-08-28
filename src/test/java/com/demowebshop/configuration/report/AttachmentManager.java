@@ -15,6 +15,7 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.Objects;
 import java.util.Optional;
 
 import static com.codeborne.selenide.Selenide.sleep;
@@ -65,12 +66,13 @@ public class AttachmentManager {
                 break;
             } catch (FileNotFoundException e) {
                 sleep(1000);
+                LOGGER.warn("[VIDEO ATTACHMENT ERROR] Wrong test video url, {}", e.getMessage());
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
 
-        Allure.addAttachment("Video", "video/mp4", videoInputStream, "mp4");
+        Allure.addAttachment("Video", "video/mp4", Objects.requireNonNull(videoInputStream), "mp4");
     }
 
     private static Optional<URL> getVideoUrl(String sessionId) {

@@ -12,12 +12,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Map;
-import java.util.Optional;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static com.demowebshop.configuration.env.ApplicationConfigImpl.config;
-import static java.util.Optional.*;
+import static java.util.Optional.ofNullable;
 
 public class LoginExtension implements BeforeEachCallback {
 

@@ -1,5 +1,6 @@
 package com.demowebshop.tests.ui;
 
+import com.demowebshop.configuration.annotaions.allure.JiraIssue;
 import com.demowebshop.configuration.annotaions.allure.Layer;
 import com.demowebshop.page.ProductList;
 import com.demowebshop.tests.BaseTest;
@@ -20,12 +21,13 @@ import static com.codeborne.selenide.Selenide.open;
 @Layer("web")
 @Owner("Alex")
 @Feature("Wishlist")
-@DisplayName("Wishlist")
+@DisplayName("Wishlist suite")
 class WishlistTest extends BaseTest {
 
     @Test
     @Story("Add product to wishlist")
     @Severity(SeverityLevel.NORMAL)
+    @JiraIssue("QC5-6")
     @Tags({@Tag("web"), @Tag("regress")})
     @Description("Add product to wishlist via UI")
     @DisplayName("Add product to wishlist")

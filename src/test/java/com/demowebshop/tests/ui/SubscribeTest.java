@@ -22,7 +22,7 @@ import static com.codeborne.selenide.Selenide.open;
 @Layer("web")
 @Owner("Alex")
 @Feature("Subscribe")
-@DisplayName("Subscribe")
+@DisplayName("Subscribe suite")
 class SubscribeTest extends BaseTest {
 
     @Test
