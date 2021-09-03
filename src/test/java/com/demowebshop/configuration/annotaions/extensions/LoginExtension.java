@@ -21,7 +21,6 @@ import static java.util.Optional.ofNullable;
 public class LoginExtension implements BeforeEachCallback {
 
     public static final Logger LOGGER = LoggerFactory.getLogger(AttachmentManager.class);
-
     private UserRepository userRepository = new UserRepository();
     private Authorization authorization = new Authorization();
 

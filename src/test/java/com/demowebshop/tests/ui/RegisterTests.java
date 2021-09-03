@@ -37,7 +37,7 @@ class RegisterTests extends BaseTest {
                 .typeNewUserEmail(user.getEmail())
                 .typeFirstName(user.getFirstname())
                 .typeLastName(user.getLastname())
-                .typePassword(user.getPassword())
+                .typeUserPassword(user.getPassword())
                 .typeConfirmPassword(user.getConfirmPassword())
                 .getSuccessfulRegistrationMessage().shouldHave(text("Your registration completed"));
 

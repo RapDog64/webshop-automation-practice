@@ -58,7 +58,7 @@ public class AttachmentManager {
         URL videoUrl = getVideoUrl(sessionId).orElseThrow(IllegalArgumentException::new);
 
         InputStream videoInputStream = null;
-        sleep(1000);
+        sleep(2000);
 
         for (int i = 0; i < timeToAddVideoToCI; i++) {
             try {

@@ -15,7 +15,7 @@ public class AllureCustomFilter {
 
     public AllureRestAssured withCustomTemplate() {
         FILTER.setRequestTemplate("request.ftl");
-        FILTER.setRequestTemplate("response.ftl");
+        FILTER.setResponseTemplate("response.ftl");
         return FILTER;
     }
 

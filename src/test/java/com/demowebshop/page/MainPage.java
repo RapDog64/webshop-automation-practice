@@ -11,6 +11,9 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class MainPage {
 
+    private SelenideElement newsletterMessage = $("#newsletter-result-block");
+    private SelenideElement newsSubscribeBtn = $("#newsletter-subscribe-button");
+    private SelenideElement newsLetterInput = $("#newsletter-email");
     private HeaderMenu headerMenu = new HeaderMenu();
     private HeaderNavigationMenu headerNavigationMenu = new HeaderNavigationMenu();
 
@@ -26,25 +29,25 @@ public class MainPage {
 
     @Step("Pre add product to shopping cart")
     public MainPage preAddProductToShoppingCart(String name) {
-        $x("//h2//a[contains(text(),'" + name + "')]/parent::h2/following-sibling::div[@class='add-info']/div[@class='buttons']")
-                .shouldBe(visible).click();
+        SelenideElement addProductToCartFromMainPage = $x("//h2//a[contains(text(),'" + name + "')]/parent::h2/following-sibling::div[@class='add-info']/div[@class='buttons']");
+        addProductToCartFromMainPage.shouldBe(visible).click();
         return this;
     }
 
     @Step("Type email into newsletter field")
     public MainPage typeEmailIntoNewsLetterField(String email) {
-        $("#newsletter-email").val(email);
+        newsLetterInput.val(email);
         return this;
     }
 
-    @Step("")
+    @Step("Click the subscribe button")
     public MainPage clickSubscribeButton() {
-        $("#newsletter-subscribe-button").shouldBe(visible).click();
+        newsSubscribeBtn.shouldBe(visible).click();
         return this;
     }
 
     @Step("Get subscribe result message")
     public SelenideElement getSubscribeMessage() {
-        return $("#newsletter-result-block").shouldBe(visible);
+        return newsletterMessage.shouldBe(visible);
     }
 }

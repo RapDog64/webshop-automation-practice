@@ -1,5 +1,7 @@
 package com.demowebshop.page;
 
+import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.SelenideElement;
 import com.demowebshop.page.component.LoginForm;
 import io.qameta.allure.Step;
 
@@ -10,27 +12,31 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class ShoppingCartPage {
 
+    private SelenideElement acceptPolicyBtn = $("#termsofservice");
+    private SelenideElement checkoutBtn = $("#checkout");
+    private ElementsCollection listOfProductInCart = $$(".cart-item-row");
+    private LoginForm loginForm = new LoginForm();
+
     @Step("Get login form")
     public LoginForm getLoginForm() {
-        return new LoginForm();
+        return loginForm;
     }
 
     @Step("Click checkout button")
     public ShoppingCartPage clickCheckoutButton() {
-        $("#checkout").shouldBe(visible).click();
+        checkoutBtn.shouldBe(visible).click();
         return this;
     }
 
     @Step("Accept policy")
     public ShoppingCartPage acceptPolicy() {
-        $("#termsofservice").shouldBe(visible).click();
+        acceptPolicyBtn.shouldBe(visible).click();
         return this;
     }
 
-
     @Step("Verify '{productName}' in the shopping cart")
     public ShoppingCartPage verifyTheProductInTheShoppingCart(String productName) {
-        $$(".cart-item-row").find(text(productName)).shouldBe(visible);
+        listOfProductInCart.find(text(productName)).shouldBe(visible);
         return this;
     }
 }

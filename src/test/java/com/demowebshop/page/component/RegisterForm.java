@@ -10,33 +10,39 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class RegisterForm extends BasePage {
 
+    private SelenideElement firstNameInput = $("#FirstName");
+    private SelenideElement lastNameInput = $("#LastName");
+    private SelenideElement confirmPasswordInput = $("#ConfirmPassword");
+    private SelenideElement registrationsMessage = $(".page-body .result");
+    private SelenideElement registerBtn = $("#register-button");
+
     @Step("Type the firstname: '{firstName}'")
     public RegisterForm typeFirstName(String firstName) {
-        $("#FirstName").shouldBe(visible).val(firstName);
+        firstNameInput.shouldBe(visible).val(firstName);
         return this;
     }
 
     @Step("Type the lastname: '{lastName}'")
     public RegisterForm typeLastName(String lastName) {
-        $("#LastName").shouldBe(visible).val(lastName);
+        lastNameInput.shouldBe(visible).val(lastName);
         return this;
     }
 
     @Step("Type the password: '{password}'")
-    public RegisterForm typePassword(String password) {
-        $("#Password").shouldBe(visible).val(password);
+    public RegisterForm typeUserPassword(String password) {
+        super.typePassword(password);
         return this;
     }
 
     @Step("Type the confirm password: '{confirmPassword}'")
     public RegisterForm typeConfirmPassword(String confirmPassword) {
-        $("#ConfirmPassword").shouldBe(visible).val(confirmPassword);
+        confirmPasswordInput.shouldBe(visible).val(confirmPassword);
         return this;
     }
 
     @Step("click the register button")
     public RegisterForm clickRegister() {
-        $("#register-button").shouldBe(visible).click();
+        registerBtn.shouldBe(visible).click();
         return this;
     }
 
@@ -58,6 +64,6 @@ public class RegisterForm extends BasePage {
 
     @Step("Get the successful registration message")
     public SelenideElement getSuccessfulRegistrationMessage() {
-        return $(".page-body .result").shouldBe(visible);
+        return registrationsMessage.shouldBe(visible);
     }
 }

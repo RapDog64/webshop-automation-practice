@@ -9,7 +9,10 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class HeaderMenu {
 
-    public LoginForm loginForm = new LoginForm();
+    private SelenideElement qtyOfProductsText = $(".wishlist-qty");
+    private SelenideElement userProfileEmailField = $(".account");
+    private LoginForm loginForm = new LoginForm();
+    private RegisterForm registerForm = new RegisterForm();
 
     @Step("Get log in form")
     public LoginForm getLoginForm() {
@@ -18,7 +21,7 @@ public class HeaderMenu {
 
     @Step("Get registration form")
     public RegisterForm getRegisterForm() {
-        return new RegisterForm();
+        return registerForm;
     }
 
     @Step("Click on the button {MenuName}")
@@ -29,11 +32,11 @@ public class HeaderMenu {
 
     @Step(value = "Get user profile email")
     public SelenideElement getProfileUserEmail() {
-        return $(".account").shouldBe(visible);
+        return userProfileEmailField.shouldBe(visible);
     }
 
     @Step(value = "Get quantity of the added products in the wishlist")
     public SelenideElement getProductQtyInWishlist() {
-        return $(".wishlist-qty").shouldBe(visible);
+        return qtyOfProductsText.shouldBe(visible);
     }
 }

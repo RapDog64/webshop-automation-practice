@@ -41,6 +41,7 @@ class ShoppingCartTest extends BaseTest {
 
         ProductList productList = new ProductList();
         productList.addProductToShoppingCart()
+                .verifyProductIsAdded()
                 .getHeaderMenu()
                 .clickHeaderSection(SHOPPING_CART);
 
@@ -62,6 +63,7 @@ class ShoppingCartTest extends BaseTest {
 
         ProductList productList = new ProductList();
         productList.addProductToShoppingCart()
+                .verifyProductIsAdded()
                 .getHeaderMenu()
                 .clickHeaderSection(SHOPPING_CART);
 

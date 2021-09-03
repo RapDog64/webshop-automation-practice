@@ -10,6 +10,10 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class LoginForm extends BasePage {
 
+    private SelenideElement loginBtn = $x("//input[@value='Log in']");
+    private SelenideElement unsuccessfulLoginMessage = $(".validation-summary-errors");
+    private SelenideElement loginTitleMessage = $(".returning-wrapper .title");
+
     @Step("Type the email: {email}")
     public LoginForm typeUserEmail(String email) {
        super.typeEmail(email);
@@ -18,18 +22,18 @@ public class LoginForm extends BasePage {
 
     @Step("Type the password: {password}")
     public LoginForm typeUserPassword(String password){
-        $("#Password").shouldBe(visible).val(password);
+        super.typePassword(password);
         return this;
     }
 
     @Step("Click log in button")
     public void clickLogIn() {
-        $x("//input[@value='Log in']").shouldBe(visible).click();
+        loginBtn.shouldBe(visible).click();
     }
 
     @Step("Get unsuccessful login message")
     public SelenideElement getUnSuccessfulLoginMessage() {
-        return $(".validation-summary-errors").shouldBe(visible);
+        return unsuccessfulLoginMessage.shouldBe(visible);
     }
 
     @Step("Get validation error message")
@@ -39,6 +43,6 @@ public class LoginForm extends BasePage {
 
     @Step("Get login form title")
     public SelenideElement checkLoginFormTitle() {
-        return $(".returning-wrapper .title").shouldBe(visible);
+        return loginTitleMessage.shouldBe(visible);
     }
 }

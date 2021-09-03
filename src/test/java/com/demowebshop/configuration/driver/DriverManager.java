@@ -34,6 +34,4 @@ public class DriverManager {
         capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
         Configuration.browserCapabilities = capabilities;
     }
-
-
 }

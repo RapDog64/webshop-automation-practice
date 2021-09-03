@@ -8,4 +8,8 @@ public abstract class BasePage {
     protected void typeEmail(String email) {
         $("#Email").shouldBe(visible).val(email);
     }
+
+    protected void typePassword(String password) {
+        $("#Password").shouldBe(visible).val(password);
+    }
 }
