@@ -1,5 +1,6 @@
 package com.demowebshop.tests.ui;
 
+import com.demowebshop.configuration.annotaions.allure.JiraIssue;
 import com.demowebshop.configuration.annotaions.allure.Layer;
 import com.demowebshop.model.User;
 import com.demowebshop.page.MainPage;
@@ -28,6 +29,7 @@ class SubscribeTest extends BaseTest {
 
     @Test
     @AllureId("4403")
+    @JiraIssue("QC5-6")
     @Story("Subscribe to the newsletter")
     @Tags({@Tag("web"), @Tag("regress")})
     @Severity(SeverityLevel.NORMAL)

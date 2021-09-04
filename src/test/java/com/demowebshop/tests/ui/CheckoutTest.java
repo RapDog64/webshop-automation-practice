@@ -1,6 +1,7 @@
 package com.demowebshop.tests.ui;
 
 import com.codeborne.selenide.WebDriverRunner;
+import com.demowebshop.configuration.annotaions.allure.JiraIssue;
 import com.demowebshop.configuration.annotaions.allure.Layer;
 import com.demowebshop.page.ShoppingCartPage;
 import com.demowebshop.tests.BaseTest;
@@ -41,6 +42,7 @@ class CheckoutTest extends BaseTest {
     @Story("Checkout as an unauthorized user")
     @Tags({@Tag("web"), @Tag("regress"), @Tag("prod")})
     @Severity(SeverityLevel.BLOCKER)
+    @JiraIssue("QC5-6")
     @Description(value = "validate the system displays log in form if an unauthorized user want to checkout the order.")
     @DisplayName(value = "validate the system displays log in form")
     void validateTheSystemDisplaysLogInForm() {

@@ -1,5 +1,6 @@
 package com.demowebshop.tests.ui;
 
+import com.demowebshop.configuration.annotaions.allure.JiraIssue;
 import com.demowebshop.configuration.annotaions.allure.Layer;
 import com.demowebshop.page.MainPage;
 import com.demowebshop.tests.BaseTest;
@@ -28,6 +29,7 @@ class NavigationMenuTests extends BaseTest {
     @Story("Displaying navigation menu links")
     @Tags({@Tag("web"), @Tag("smoke"), @Tag("prod")})
     @Severity(SeverityLevel.CRITICAL)
+    @JiraIssue("QC5-6")
     @Description("validate navigation menu link are displayed on the header menu")
     @DisplayName("validate navigation menu link are displayed")
     void validateNavigationMenuLinkAreDisplayed() {

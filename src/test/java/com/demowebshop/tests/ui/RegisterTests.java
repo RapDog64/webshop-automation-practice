@@ -1,5 +1,6 @@
 package com.demowebshop.tests.ui;
 
+import com.demowebshop.configuration.annotaions.allure.JiraIssue;
 import com.demowebshop.configuration.annotaions.allure.Layer;
 import com.demowebshop.model.Genders;
 import com.demowebshop.model.User;
@@ -27,6 +28,7 @@ class RegisterTests extends BaseTest {
     @Story("Registration a new user")
     @Severity(SeverityLevel.CRITICAL)
     @Lead(value = "Denis")
+    @JiraIssue("QC5-6")
     @Tags({@Tag("web"), @Tag("smoke")})
     @Description("Register a new user via UI")
     @DisplayName("Register a new user")

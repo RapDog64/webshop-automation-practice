@@ -1,5 +1,6 @@
 package com.demowebshop.tests.ui;
 
+import com.demowebshop.configuration.annotaions.allure.JiraIssue;
 import com.demowebshop.configuration.annotaions.allure.Layer;
 import com.demowebshop.model.HeaderMenuSections;
 import com.demowebshop.model.User;
@@ -34,6 +35,7 @@ class LoginTests extends BaseTest {
     @Test
     @AllureId("4404")
     @Severity(SeverityLevel.CRITICAL)
+    @JiraIssue("QC5-6")
     @Story("Successful log in")
     @Tags({@Tag("web"), @Tag("regress"), @Tag("prod")})
     @DisplayName("Log in as a user")
@@ -57,6 +59,7 @@ class LoginTests extends BaseTest {
     @DisplayName("User should see unsuccessful login message")
     @Description("User should see unsuccessful login message if the credentials are invalid")
     @Tags({@Tag("web"), @Tag("night")})
+    @JiraIssue("QC5-6")
     @Severity(SeverityLevel.NORMAL)
     @ParameterizedTest
     @AllureId("4405")

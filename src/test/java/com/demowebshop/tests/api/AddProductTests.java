@@ -1,5 +1,6 @@
 package com.demowebshop.tests.api;
 
+import com.demowebshop.configuration.annotaions.allure.JiraIssue;
 import com.demowebshop.configuration.annotaions.allure.Layer;
 import com.demowebshop.model.api.AddProductResponse;
 import com.demowebshop.service.ProductService;
@@ -32,6 +33,7 @@ class AddProductTests {
     @AllureId("4394")
     @Tags({@Tag("web"), @Tag("regress"), @Tag("prod")})
     @Lead(value = "Denis")
+    @JiraIssue("QC5-6")
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Add product to cart")
     @Description("Add product to cart via api")

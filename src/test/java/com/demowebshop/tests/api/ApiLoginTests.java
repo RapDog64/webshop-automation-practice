@@ -1,5 +1,6 @@
 package com.demowebshop.tests.api;
 
+import com.demowebshop.configuration.annotaions.allure.JiraIssue;
 import com.demowebshop.configuration.annotaions.allure.Layer;
 import com.demowebshop.dao.UserRepository;
 import com.demowebshop.model.User;
@@ -27,6 +28,7 @@ class ApiLoginTests {
 
     @Test
     @AllureId("4395")
+    @JiraIssue("QC5-6")
     @Tags({@Tag("web"), @Tag("regress"), @Tag("prod")})
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("verify status code is 302")
