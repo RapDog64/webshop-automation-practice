@@ -28,7 +28,7 @@ class ApiLoginTests {
 
     @Test
     @AllureId("4395")
-    @JiraIssue("QC5-6")
+    @JiraIssue("QC5-12")
     @Tags({@Tag("web"), @Tag("regress"), @Tag("prod")})
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("verify status code is 302")

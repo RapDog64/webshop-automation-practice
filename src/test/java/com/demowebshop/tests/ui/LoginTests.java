@@ -59,7 +59,7 @@ class LoginTests extends BaseTest {
     @DisplayName("User should see unsuccessful login message")
     @Description("User should see unsuccessful login message if the credentials are invalid")
     @Tags({@Tag("web"), @Tag("night")})
-    @JiraIssue("QC5-6")
+    @JiraIssue("QC5-12")
     @Severity(SeverityLevel.NORMAL)
     @ParameterizedTest
     @AllureId("4405")

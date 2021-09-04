@@ -29,7 +29,7 @@ class WishlistTest extends BaseTest {
     @AllureId("4398")
     @Story("Add product to wishlist")
     @Severity(SeverityLevel.NORMAL)
-    @JiraIssue("QC5-6")
+    @JiraIssue("QC5-12")
     @Tags({@Tag("web"), @Tag("regress")})
     @Description("Add product to wishlist via UI")
     @DisplayName("Add product to wishlist")

@@ -29,7 +29,7 @@ class NavigationMenuTests extends BaseTest {
     @Story("Displaying navigation menu links")
     @Tags({@Tag("web"), @Tag("smoke"), @Tag("prod")})
     @Severity(SeverityLevel.CRITICAL)
-    @JiraIssue("QC5-6")
+    @JiraIssue("QC5-12")
     @Description("validate navigation menu link are displayed on the header menu")
     @DisplayName("validate navigation menu link are displayed")
     void validateNavigationMenuLinkAreDisplayed() {

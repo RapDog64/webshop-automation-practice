@@ -33,7 +33,7 @@ class AddProductTests {
     @AllureId("4394")
     @Tags({@Tag("web"), @Tag("regress"), @Tag("prod")})
     @Lead(value = "Denis")
-    @JiraIssue("QC5-6")
+    @JiraIssue("QC5-12")
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Add product to cart")
     @Description("Add product to cart via api")

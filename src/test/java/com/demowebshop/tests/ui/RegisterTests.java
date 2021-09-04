@@ -28,7 +28,7 @@ class RegisterTests extends BaseTest {
     @Story("Registration a new user")
     @Severity(SeverityLevel.CRITICAL)
     @Lead(value = "Denis")
-    @JiraIssue("QC5-6")
+    @JiraIssue("QC5-12")
     @Tags({@Tag("web"), @Tag("smoke")})
     @Description("Register a new user via UI")
     @DisplayName("Register a new user")

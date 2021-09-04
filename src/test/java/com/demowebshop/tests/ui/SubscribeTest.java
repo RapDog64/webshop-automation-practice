@@ -29,7 +29,7 @@ class SubscribeTest extends BaseTest {
 
     @Test
     @AllureId("4403")
-    @JiraIssue("QC5-6")
+    @JiraIssue("QC5-12")
     @Story("Subscribe to the newsletter")
     @Tags({@Tag("web"), @Tag("regress")})
     @Severity(SeverityLevel.NORMAL)
