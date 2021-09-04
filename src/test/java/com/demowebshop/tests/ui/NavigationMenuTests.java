@@ -3,6 +3,7 @@ package com.demowebshop.tests.ui;
 import com.demowebshop.configuration.annotaions.allure.Layer;
 import com.demowebshop.page.MainPage;
 import com.demowebshop.tests.BaseTest;
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -23,6 +24,7 @@ import static com.codeborne.selenide.Selenide.open;
 class NavigationMenuTests extends BaseTest {
 
     @Test
+    @AllureId("4397")
     @Story("Displaying navigation menu links")
     @Tags({@Tag("web"), @Tag("smoke"), @Tag("prod")})
     @Severity(SeverityLevel.CRITICAL)

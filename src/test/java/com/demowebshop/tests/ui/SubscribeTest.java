@@ -5,6 +5,7 @@ import com.demowebshop.model.User;
 import com.demowebshop.page.MainPage;
 import com.demowebshop.tests.BaseTest;
 import com.demowebshop.utility.UserGenerator;
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -26,6 +27,7 @@ import static com.codeborne.selenide.Selenide.open;
 class SubscribeTest extends BaseTest {
 
     @Test
+    @AllureId("4403")
     @Story("Subscribe to the newsletter")
     @Tags({@Tag("web"), @Tag("regress")})
     @Severity(SeverityLevel.NORMAL)

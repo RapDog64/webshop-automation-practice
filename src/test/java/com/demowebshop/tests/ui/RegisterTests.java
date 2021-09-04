@@ -23,6 +23,7 @@ import static com.codeborne.selenide.Selenide.open;
 class RegisterTests extends BaseTest {
 
     @Test
+    @AllureId("4401")
     @Story("Registration a new user")
     @Severity(SeverityLevel.CRITICAL)
     @Lead(value = "Denis")

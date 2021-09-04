@@ -4,6 +4,7 @@ import com.demowebshop.configuration.annotaions.allure.JiraIssue;
 import com.demowebshop.configuration.annotaions.allure.Layer;
 import com.demowebshop.page.ProductList;
 import com.demowebshop.tests.BaseTest;
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -25,6 +26,7 @@ import static com.codeborne.selenide.Selenide.open;
 class WishlistTest extends BaseTest {
 
     @Test
+    @AllureId("4398")
     @Story("Add product to wishlist")
     @Severity(SeverityLevel.NORMAL)
     @JiraIssue("QC5-6")

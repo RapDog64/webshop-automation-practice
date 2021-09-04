@@ -4,6 +4,7 @@ import com.demowebshop.configuration.annotaions.allure.Layer;
 import com.demowebshop.dao.UserRepository;
 import com.demowebshop.model.User;
 import com.demowebshop.service.Authorization;
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
@@ -25,6 +26,7 @@ class ApiLoginTests {
     private final Authorization authorization = new Authorization();
 
     @Test
+    @AllureId("4395")
     @Tags({@Tag("web"), @Tag("regress"), @Tag("prod")})
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("verify status code is 302")
@@ -35,4 +37,6 @@ class ApiLoginTests {
         Assertions.assertEquals("text/html; charset=utf-8", response.getContentType());
         Assertions.assertEquals(302, response.statusCode());
     }
+
+
 }

@@ -4,6 +4,7 @@ import com.codeborne.selenide.WebDriverRunner;
 import com.demowebshop.configuration.annotaions.allure.Layer;
 import com.demowebshop.page.ShoppingCartPage;
 import com.demowebshop.tests.BaseTest;
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -36,6 +37,7 @@ class CheckoutTest extends BaseTest {
     }
 
     @Test
+    @AllureId("4396")
     @Story("Checkout as an unauthorized user")
     @Tags({@Tag("web"), @Tag("regress"), @Tag("prod")})
     @Severity(SeverityLevel.BLOCKER)

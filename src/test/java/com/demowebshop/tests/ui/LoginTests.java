@@ -7,6 +7,7 @@ import com.demowebshop.page.MainPage;
 import com.demowebshop.page.component.HeaderMenu;
 import com.demowebshop.page.component.LoginForm;
 import com.demowebshop.tests.BaseTest;
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -31,6 +32,7 @@ import static io.qameta.allure.Allure.parameter;
 class LoginTests extends BaseTest {
 
     @Test
+    @AllureId("4404")
     @Severity(SeverityLevel.CRITICAL)
     @Story("Successful log in")
     @Tags({@Tag("web"), @Tag("regress"), @Tag("prod")})
@@ -57,6 +59,7 @@ class LoginTests extends BaseTest {
     @Tags({@Tag("web"), @Tag("night")})
     @Severity(SeverityLevel.NORMAL)
     @ParameterizedTest
+    @AllureId("4405")
     @CsvSource({"test@emial.com,TEST", "Java@emial.com, JAVA"})
     void loginWithIncorrectCredentials(String email, String password) {
         parameter("user email", email);
@@ -76,6 +79,7 @@ class LoginTests extends BaseTest {
     @Tags({@Tag("web"), @Tag("smoke"), @Tag("prod")})
     @Description("User should see invalid Email format message if the email is not in the email format")
     @ParameterizedTest
+    @AllureId("4399")
     @CsvSource({"test432423,TEST", "s##$@#$@#4@emial.com, TEST"})
     void loginWithInvalidEmailFormat(String email, String password) {
         parameter("user email", email);

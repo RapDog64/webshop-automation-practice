@@ -3,6 +3,7 @@ package com.demowebshop.tests.api;
 import com.demowebshop.configuration.annotaions.allure.Layer;
 import com.demowebshop.model.api.AddProductResponse;
 import com.demowebshop.service.ProductService;
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Lead;
@@ -28,6 +29,7 @@ class AddProductTests {
     private final ProductService productService = new ProductService();
 
     @Test
+    @AllureId("4394")
     @Tags({@Tag("web"), @Tag("regress"), @Tag("prod")})
     @Lead(value = "Denis")
     @Severity(SeverityLevel.CRITICAL)

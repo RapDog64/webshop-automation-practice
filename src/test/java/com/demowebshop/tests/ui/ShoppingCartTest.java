@@ -6,6 +6,7 @@ import com.demowebshop.page.MainPage;
 import com.demowebshop.page.ProductList;
 import com.demowebshop.page.ShoppingCartPage;
 import com.demowebshop.tests.BaseTest;
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -27,6 +28,7 @@ import static com.demowebshop.model.HeaderMenuSections.SHOPPING_CART;
 class ShoppingCartTest extends BaseTest {
 
     @Test
+    @AllureId("4402")
     @Story("Authorized user can add product to cart")
     @Severity(SeverityLevel.CRITICAL)
     @Tags({@Tag("web"), @Tag("regress")})
@@ -50,6 +52,7 @@ class ShoppingCartTest extends BaseTest {
     }
 
     @Test
+    @AllureId("4400")
     @Story("Unauthorized user can add product to cart")
     @Severity(SeverityLevel.NORMAL)
     @Tags({@Tag("web"), @Tag("regress")})
