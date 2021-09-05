@@ -55,7 +55,7 @@ class ShoppingCartTest extends BaseTest {
 
     @Test
     @AllureId("4400")
-    @JiraIssue("QC5-6")
+    @JiraIssue("QC5-12")
     @Story("Unauthorized user can add product to cart")
     @Severity(SeverityLevel.NORMAL)
     @Tags({@Tag("web"), @Tag("regress")})

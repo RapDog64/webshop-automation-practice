@@ -35,7 +35,7 @@ class LoginTests extends BaseTest {
     @Test
     @AllureId("4404")
     @Severity(SeverityLevel.CRITICAL)
-    @JiraIssue("QC5-6")
+    @JiraIssue("QC5-12")
     @Story("Successful log in")
     @Tags({@Tag("web"), @Tag("regress"), @Tag("prod")})
     @DisplayName("Log in as a user")
@@ -76,14 +76,15 @@ class LoginTests extends BaseTest {
                 .shouldHave(text("Login was unsuccessful. Please correct the errors and try again."));
     }
 
-    @Story("Log in with invalid credentials")
-    @Severity(SeverityLevel.NORMAL)
-    @DisplayName("User should see invalid Email format")
     @Tags({@Tag("web"), @Tag("smoke"), @Tag("prod")})
+    @Severity(SeverityLevel.NORMAL)
+    @AllureId("4399")
+    @JiraIssue("QC5-12")
+    @Story("Log in with invalid credentials")
+    @CsvSource({"test432423,TEST", "s##$@#$@#4@emial.com, TEST"})
+    @DisplayName("User should see invalid Email format")
     @Description("User should see invalid Email format message if the email is not in the email format")
     @ParameterizedTest
-    @AllureId("4399")
-    @CsvSource({"test432423,TEST", "s##$@#$@#4@emial.com, TEST"})
     void loginWithInvalidEmailFormat(String email, String password) {
         parameter("user email", email);
         parameter("user password", password);

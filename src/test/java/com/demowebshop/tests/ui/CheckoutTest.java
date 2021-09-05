@@ -38,13 +38,13 @@ class CheckoutTest extends BaseTest {
     }
 
     @Test
-    @AllureId("4396")
-    @Story("Checkout as an unauthorized user")
     @Tags({@Tag("web"), @Tag("regress"), @Tag("prod")})
+    @Story("Checkout as an unauthorized user")
+    @AllureId("4396")
     @Severity(SeverityLevel.BLOCKER)
     @JiraIssue("QC5-12")
-    @Description(value = "validate the system displays log in form if an unauthorized user want to checkout the order.")
     @DisplayName(value = "validate the system displays log in form")
+    @Description(value = "validate the system displays log in form if an unauthorized user want to checkout the order.")
     void validateTheSystemDisplaysLogInForm() {
         ShoppingCartPage shoppingCartPage = open("/cart", ShoppingCartPage.class);
         shoppingCartPage.acceptPolicy()
