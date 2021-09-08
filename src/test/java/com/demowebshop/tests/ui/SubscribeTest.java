@@ -18,7 +18,6 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.open;
 
 @Layer("web")
@@ -42,7 +41,6 @@ class SubscribeTest extends BaseTest {
         MainPage mainPage = open("/", MainPage.class);
         mainPage.typeEmailIntoNewsLetterField(user.getEmail())
                 .clickSubscribeButton()
-                .getSubscribeMessage()
-                .shouldHave(text(expectedMessage));
+                .getSubscribeMessage(expectedMessage);
     }
 }

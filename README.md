@@ -1,4 +1,4 @@
-# Test automation framework for [Demo Web Shop](http://demowebshop.tricentis.com) appilication with  test examples
+# Test automation framework for [Demo Web Shop](http://demowebshop.tricentis.com) application
 
 ## Description
 
@@ -20,13 +20,13 @@ There are several tools are used:
 :heavy_check_mark: UI Register a new user    
 :heavy_check_mark: UI login test    
 :heavy_check_mark: UI login test with incorrect credentials    
-:heavy_check_mark: Validate authorized users can add a product to cart    
-:heavy_check_mark: Validate unauthorized users can add a product to cart    
-:heavy_check_mark: Validate the system displays the login form if an unauthorized user want to check out the order.   
-:heavy_check_mark: Subscribe to the newsletter    
-:heavy_check_mark: Add product to wishlist with UI
-:heavy_check_mark: Search a product by product name
-:heavy_check_mark: Search a nonexistent product
+:heavy_check_mark: Validate authorized users can add a product to cart  
+:heavy_check_mark: Validate unauthorized users can add a product to cart   
+:heavy_check_mark: Validate the system displays the login form if an unauthorized user want to check out the order  
+:heavy_check_mark: Subscribe to the newsletter  <br/>
+:heavy_check_mark: Add product to wishlist with UI <br/>
+:heavy_check_mark: Search a product by product name <br/>
+:heavy_check_mark: Search a nonexistent product <br/>
 
 ## API Tests
 
@@ -83,7 +83,7 @@ clean test
 ![Dashboard3](./images/Dashboard_by_the_team.PNG)
 
 ### - Integration with Jira
-![Jira_1](./images/jira.png)
+![Jira_1](./images/jira-ticket.png)
 
 ### - Telegram notification
 ![Telegram_1](./images/telegram_bot.png)

@@ -6,7 +6,6 @@ plugins {
 group 'org.demowebshop'
 version '1.2'
 
-
 repositories {
     mavenCentral()
 }
@@ -35,7 +34,6 @@ allure {
 }
 
 dependencies {
-
     testImplementation(
             "com.codeborne:selenide:${selenideVersion}",
             "io.qameta.allure:allure-selenide:${allureVersion}",

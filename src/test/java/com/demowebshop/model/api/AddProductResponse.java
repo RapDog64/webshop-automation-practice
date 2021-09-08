@@ -23,4 +23,5 @@ public class AddProductResponse {
 
 	@JsonProperty("updateflyoutcartsectionhtml")
 	private String updateflyoutcartsectionhtml;
+
 }

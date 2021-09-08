@@ -4,7 +4,6 @@ import com.codeborne.selenide.ElementsCollection;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.demowebshop.model.NavigationMenuLink.APPAREL_AND_SHOES;
 import static com.demowebshop.model.NavigationMenuLink.BOOK;
@@ -20,12 +19,12 @@ public class HeaderNavigationMenu {
 
     @Step("verify navigation menu links are displayed")
     public void verifyNavigationMenuLinks() {
-        listOfnNavigationMenuLinks.find(text(BOOK.getLinkName())).should(visible);
-        listOfnNavigationMenuLinks.find(text(COMPUTERS.getLinkName())).should(visible);
-        listOfnNavigationMenuLinks.find(text(ELECTRONICS.getLinkName())).should(visible);
-        listOfnNavigationMenuLinks.find(text(APPAREL_AND_SHOES.getLinkName())).should(visible);
-        listOfnNavigationMenuLinks.find(text(DIGITAL_DOWNLOADS.getLinkName())).should(visible);
-        listOfnNavigationMenuLinks.find(text(JEWELRY.getLinkName())).should(visible);
-        listOfnNavigationMenuLinks.find(text(GIFT_CARDS.getLinkName())).should(visible);
+        listOfnNavigationMenuLinks.find(text(BOOK.getLinkName()));
+        listOfnNavigationMenuLinks.find(text(COMPUTERS.getLinkName()));
+        listOfnNavigationMenuLinks.find(text(ELECTRONICS.getLinkName()));
+        listOfnNavigationMenuLinks.find(text(APPAREL_AND_SHOES.getLinkName()));
+        listOfnNavigationMenuLinks.find(text(DIGITAL_DOWNLOADS.getLinkName()));
+        listOfnNavigationMenuLinks.find(text(JEWELRY.getLinkName()));
+        listOfnNavigationMenuLinks.find(text(GIFT_CARDS.getLinkName()));
     }
 }
