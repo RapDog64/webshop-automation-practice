@@ -22,7 +22,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.parameter;
 
@@ -52,7 +51,7 @@ class LoginTests extends BaseTest {
                 .clickLogIn();
 
         HeaderMenu headerMenu = new HeaderMenu();
-        headerMenu.getProfileUserEmail().shouldHave(text(user.getEmail()));
+        headerMenu.getProfileUserEmail(user.getEmail());
     }
 
     @Story("Log in with incorrect credentials")
@@ -72,8 +71,7 @@ class LoginTests extends BaseTest {
         loginForm.typeUserEmail(email);
         loginForm.typeUserPassword(password);
         loginForm.clickLogIn();
-        loginForm.getUnSuccessfulLoginMessage()
-                .shouldHave(text("Login was unsuccessful. Please correct the errors and try again."));
+        loginForm.getUnSuccessfulLoginMessage("Login was unsuccessful. Please correct the errors and try again.");
     }
 
     @Tags({@Tag("web"), @Tag("smoke"), @Tag("prod")})
@@ -93,7 +91,6 @@ class LoginTests extends BaseTest {
         loginForm.typeUserEmail(email);
         loginForm.typeUserPassword(password);
         loginForm.clickLogIn();
-        loginForm.getValidationErrorMessage()
-                .shouldHave(text("Please enter email address."));
+        loginForm.getValidationErrorMessage("Please enter email address.");
     }
 }

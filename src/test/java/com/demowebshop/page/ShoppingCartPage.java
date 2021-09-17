@@ -24,19 +24,18 @@ public class ShoppingCartPage {
 
     @Step("Click checkout button")
     public ShoppingCartPage clickCheckoutButton() {
-        checkoutBtn.shouldBe(visible).click();
+        checkoutBtn.click();
         return this;
     }
 
     @Step("Accept policy")
     public ShoppingCartPage acceptPolicy() {
-        acceptPolicyBtn.shouldBe(visible).click();
+        acceptPolicyBtn.click();
         return this;
     }
 
     @Step("Verify '{productName}' in the shopping cart")
-    public ShoppingCartPage verifyTheProductInTheShoppingCart(String productName) {
+    public void verifyTheProductInTheShoppingCart(String productName) {
         listOfProductInCart.find(text(productName)).shouldBe(visible);
-        return this;
     }
 }

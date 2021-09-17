@@ -42,9 +42,9 @@ class RegisterTests extends BaseTest {
                 .typeLastName(user.getLastname())
                 .typeUserPassword(user.getPassword())
                 .typeConfirmPassword(user.getConfirmPassword())
-                .getSuccessfulRegistrationMessage().shouldHave(text("Your registration completed"));
+                .getSuccessfulRegistrationMessage("Your registration completed");
 
         HeaderMenu headerMenu = new HeaderMenu();
-        headerMenu.getProfileUserEmail().shouldHave(text(user.getEmail()));
+        headerMenu.getProfileUserEmail(user.getEmail());
     }
 }

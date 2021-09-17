@@ -5,7 +5,7 @@ import com.demowebshop.model.Genders;
 import com.demowebshop.page.BasePage;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 
 public class RegisterForm extends BasePage {
@@ -15,16 +15,18 @@ public class RegisterForm extends BasePage {
     private SelenideElement confirmPasswordInput = $("#ConfirmPassword");
     private SelenideElement registrationsMessage = $(".page-body .result");
     private SelenideElement registerBtn = $("#register-button");
+    private SelenideElement genderMale = $("#gender-male");
+    private SelenideElement genderFemale = $("#gender-female");
 
     @Step("Type the firstname: '{firstName}'")
     public RegisterForm typeFirstName(String firstName) {
-        firstNameInput.shouldBe(visible).val(firstName);
+        firstNameInput.val(firstName);
         return this;
     }
 
     @Step("Type the lastname: '{lastName}'")
     public RegisterForm typeLastName(String lastName) {
-        lastNameInput.shouldBe(visible).val(lastName);
+        lastNameInput.val(lastName);
         return this;
     }
 
@@ -36,13 +38,13 @@ public class RegisterForm extends BasePage {
 
     @Step("Type the confirm password: '{confirmPassword}'")
     public RegisterForm typeConfirmPassword(String confirmPassword) {
-        confirmPasswordInput.shouldBe(visible).val(confirmPassword);
+        confirmPasswordInput.val(confirmPassword);
         return this;
     }
 
     @Step("click the register button")
     public RegisterForm clickRegister() {
-        registerBtn.shouldBe(visible).click();
+        registerBtn.click();
         return this;
     }
 
@@ -55,15 +57,15 @@ public class RegisterForm extends BasePage {
     @Step("Choose gender: '{gender}'")
     public RegisterForm chooseGender(Genders gender) {
         if (gender.getGender().equalsIgnoreCase("male")) {
-            $("#gender-male").click();
+            genderMale.click();
         } else if (gender.getGender().equalsIgnoreCase("female")) {
-            $("#gender-female").click();
+            genderFemale.click();
         }
         return this;
     }
 
-    @Step("Get the successful registration message")
-    public SelenideElement getSuccessfulRegistrationMessage() {
-        return registrationsMessage.shouldBe(visible);
+    @Step("Get the successful registration message: '{message}'")
+    public void getSuccessfulRegistrationMessage(String message) {
+        registrationsMessage.shouldHave(text(message));
     }
 }

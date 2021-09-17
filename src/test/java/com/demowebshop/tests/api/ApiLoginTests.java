@@ -39,6 +39,4 @@ class ApiLoginTests {
         Assertions.assertEquals("text/html; charset=utf-8", response.getContentType());
         Assertions.assertEquals(302, response.statusCode());
     }
-
-
 }

@@ -3,6 +3,8 @@ package com.demowebshop.configuration.database;
 import com.demowebshop.model.Genders;
 import com.demowebshop.model.User;
 
+import static com.demowebshop.configuration.env.ApplicationConfigImpl.config;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,9 +33,9 @@ public class CustomDatabase {
                 .firstname("Ivan")
                 .lastname("Petrov")
                 .gender(Genders.MALE.getGender())
-                .email("testing@email.ru")
-                .password("testing")
-                .confirmPassword("testing")
+                .email(config.userEmail())
+                .password(config.userPassword())
+                .confirmPassword(config.userPassword())
                 .build();
 
         users.add(defaultUser);

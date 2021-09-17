@@ -6,7 +6,6 @@ plugins {
 group 'org.demowebshop'
 version '1.2'
 
-
 repositories {
     mavenCentral()
 }
@@ -35,7 +34,6 @@ allure {
 }
 
 dependencies {
-
     testImplementation(
             "com.codeborne:selenide:${selenideVersion}",
             "io.qameta.allure:allure-selenide:${allureVersion}",
@@ -49,7 +47,6 @@ dependencies {
             "com.github.javafaker:javafaker:${fakerVersion}",
             "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
     )
-
     testCompileOnly "org.projectlombok:lombok:1.18.20"
     testAnnotationProcessor "org.projectlombok:lombok:1.18.20"
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion", "org.slf4j:slf4j-simple:${slf4jVersion}")
