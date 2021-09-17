@@ -33,12 +33,12 @@ public class HeaderMenu {
     }
 
     @Step(value = "Get user profile email")
-    public SelenideElement getProfileUserEmail(String userEmail) {
-        return userProfileEmailField.shouldHave(text(userEmail));
+    public void getProfileUserEmail(String userEmail) {
+        userProfileEmailField.shouldHave(text(userEmail));
     }
 
     @Step(value = "Get quantity of the added products in the wishlist")
-    public SelenideElement getProductQtyInWishlist(int qty) {
-        return qtyOfProductsText.shouldHave(Condition.text(String.valueOf(qty)));
+    public void getProductQtyInWishlist(int qty) {
+         qtyOfProductsText.shouldHave(Condition.text(String.valueOf(qty)));
     }
 }

@@ -65,7 +65,7 @@ public class RegisterForm extends BasePage {
     }
 
     @Step("Get the successful registration message: '{message}'")
-    public SelenideElement getSuccessfulRegistrationMessage(String message) {
-        return registrationsMessage.shouldHave(text(message));
+    public void getSuccessfulRegistrationMessage(String message) {
+        registrationsMessage.shouldHave(text(message));
     }
 }

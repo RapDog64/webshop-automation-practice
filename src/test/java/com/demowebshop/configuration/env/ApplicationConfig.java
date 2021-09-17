@@ -9,6 +9,12 @@ import org.aeonbits.owner.Config;
 })
 public interface ApplicationConfig extends Config {
 
+    @Config.Key("userEmail")
+    String userEmail();
+
+    @Config.Key("userPassword")
+    String userPassword();
+
     @Config.Key("webUrl")
     String webUrl();
 

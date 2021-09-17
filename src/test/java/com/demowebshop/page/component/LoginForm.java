@@ -16,12 +16,12 @@ public class LoginForm extends BasePage {
 
     @Step("Type the email: '{email}'")
     public LoginForm typeUserEmail(String email) {
-       super.typeEmail(email);
-       return this;
+        super.typeEmail(email);
+        return this;
     }
 
     @Step("Type the password: '{password}'")
-    public LoginForm typeUserPassword(String password){
+    public LoginForm typeUserPassword(String password) {
         super.typePassword(password);
         return this;
     }
@@ -32,8 +32,8 @@ public class LoginForm extends BasePage {
     }
 
     @Step("Get unsuccessful login message '{message}'")
-    public SelenideElement getUnSuccessfulLoginMessage(String message) {
-        return unsuccessfulLoginMessage.shouldHave(text(message));
+    public void getUnSuccessfulLoginMessage(String message) {
+        unsuccessfulLoginMessage.shouldHave(text(message));
     }
 
     @Step("Get validation error message '{message}'")
@@ -42,7 +42,7 @@ public class LoginForm extends BasePage {
     }
 
     @Step("Get login form title: '{title}'")
-    public SelenideElement checkLoginFormTitle(String title) {
-        return loginTitleMessage.shouldHave(text(title));
+    public void checkLoginFormTitle(String title) {
+        loginTitleMessage.shouldHave(text(title));
     }
 }

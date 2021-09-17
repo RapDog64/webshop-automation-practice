@@ -12,16 +12,16 @@ import lombok.NoArgsConstructor;
 @Builder
 public class AddProductResponse {
 
-	@JsonProperty("success")
-	private boolean success;
+    @JsonProperty("success")
+    private boolean success;
 
-	@JsonProperty("message")
-	private String message;
+    @JsonProperty("message")
+    private String message;
 
-	@JsonProperty("updatetopcartsectionhtml")
-	private String updatetopcartsectionhtml;
+    @JsonProperty("updatetopcartsectionhtml")
+    private String updatetopcartsectionhtml;
 
-	@JsonProperty("updateflyoutcartsectionhtml")
-	private String updateflyoutcartsectionhtml;
+    @JsonProperty("updateflyoutcartsectionhtml")
+    private String updateflyoutcartsectionhtml;
 
 }

@@ -35,8 +35,7 @@ public class ShoppingCartPage {
     }
 
     @Step("Verify '{productName}' in the shopping cart")
-    public ShoppingCartPage verifyTheProductInTheShoppingCart(String productName) {
+    public void verifyTheProductInTheShoppingCart(String productName) {
         listOfProductInCart.find(text(productName)).shouldBe(visible);
-        return this;
     }
 }
