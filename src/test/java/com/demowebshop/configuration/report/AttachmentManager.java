@@ -20,7 +20,7 @@ import java.util.Optional;
 
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
-import static com.demowebshop.configuration.env.ApplicationConfigImpl.config;
+import static com.demowebshop.configuration.env.AppConfiguration.config;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
 public class AttachmentManager {

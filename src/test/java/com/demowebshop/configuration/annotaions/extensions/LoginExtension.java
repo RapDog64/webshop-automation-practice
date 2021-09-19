@@ -15,7 +15,7 @@ import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
-import static com.demowebshop.configuration.env.ApplicationConfigImpl.config;
+import static com.demowebshop.configuration.env.AppConfiguration.config;
 import static java.util.Optional.ofNullable;
 
 public class LoginExtension implements BeforeEachCallback {
@@ -36,6 +36,7 @@ public class LoginExtension implements BeforeEachCallback {
         Map<String, String> cookies = response.getCookies();
 
         open(config.webUrl() + "/Themes/DefaultClean/Content/images/mobile-menu-collapse.png");
-        cookies.forEach((key, value) -> getWebDriver().manage().addCookie(new Cookie("NOPCOMMERCE.AUTH", cookies.get("NOPCOMMERCE.AUTH"))));
+        cookies.forEach((key, value) -> getWebDriver().manage().addCookie(
+                new Cookie("NOPCOMMERCE.AUTH", cookies.get("NOPCOMMERCE.AUTH"))));
     }
 }

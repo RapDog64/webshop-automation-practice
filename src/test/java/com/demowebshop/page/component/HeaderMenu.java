@@ -1,13 +1,12 @@
 package com.demowebshop.page.component;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import com.demowebshop.model.HeaderMenuSections;
 import io.qameta.allure.Step;
 
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
+import static java.lang.String.valueOf;
 
 public class HeaderMenu {
 
@@ -39,6 +38,6 @@ public class HeaderMenu {
 
     @Step(value = "Get quantity of the added products in the wishlist")
     public void getProductQtyInWishlist(int qty) {
-         qtyOfProductsText.shouldHave(Condition.text(String.valueOf(qty)));
+        qtyOfProductsText.shouldHave(text(valueOf(qty)));
     }
 }

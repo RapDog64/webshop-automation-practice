@@ -3,7 +3,7 @@ package com.demowebshop.tests;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.demowebshop.configuration.annotaions.extensions.ReportDetailsExtension;
 import com.demowebshop.configuration.driver.DriverManager;
-import com.demowebshop.configuration.env.ApplicationConfigImpl;
+import com.demowebshop.configuration.env.AppConfiguration;
 import com.demowebshop.configuration.report.AttachmentManager;
 import com.demowebshop.dao.UserRepository;
 import io.qameta.allure.junit5.AllureJunit5;
@@ -38,7 +38,7 @@ public abstract class BaseTest {
         AttachmentManager.browserConsoleLogs();
         closeWebDriver();
 
-        if (ApplicationConfigImpl.isVideoTurnedOn()) {
+        if (AppConfiguration.isVideoTurnedOn()) {
             AttachmentManager.addVideo(sessionId);
         }
     }

@@ -9,29 +9,15 @@ import org.aeonbits.owner.Config;
 })
 public interface ApplicationConfig extends Config {
 
-    @Config.Key("userEmail")
     String userEmail();
-
-    @Config.Key("userPassword")
     String userPassword();
-
-    @Config.Key("webUrl")
     String webUrl();
-
-    @Config.Key("apiUrl")
     String apiUrl();
-
-    @Config.Key("browser")
     String browser();
-
-    @Config.Key("browserVersion")
     String browserVersion();
 
-    @Config.Key("remoteDriverUrl")
     @DefaultValue("")
     String remoteDriverUrl();
-
     @DefaultValue("")
-    @Config.Key("videoStorage")
     String videoStorage();
 }
