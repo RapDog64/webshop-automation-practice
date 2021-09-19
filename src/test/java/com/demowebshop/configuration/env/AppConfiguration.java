@@ -2,7 +2,7 @@ package com.demowebshop.configuration.env;
 
 import org.aeonbits.owner.ConfigFactory;
 
-public class ApplicationConfigImpl {
+public class AppConfiguration {
 
     public static final ApplicationConfig config = ConfigFactory.create(ApplicationConfig.class, System.getProperties());
 

@@ -1,5 +1,15 @@
 # Test automation framework for [Demo Web Shop](http://demowebshop.tricentis.com) application
 
+## Technology Stack
+
+| <a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Java.svg" width="40" height="40"  alt="Java"/></a> | <a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Gradle.svg" width="40" height="40"  alt="Gradle"/></a> | <a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/JUnit5.svg" width="40" height="40"  alt="JUnit 5"/></a> | <a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Selenide.svg" width="40" height="40"  alt="Selenide"/></a> | <a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Rest-Assured.svg" width="40" height="40"  alt="RestAssured"/></a>  | <a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Intelij_IDEA.svg" width="40" height="40"  alt="IDEA"/></a> |
+| :---------: | :---------: | :---------: | :---------: | :---------: | :---------: |
+| Java |  Gradle | Junit 5 | Selenide | Rest Assured | IDEA |
+
+| <a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Selenoid.svg" width="40" height="40"  alt="Selenoid"/></a> | <a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Allure_Report.svg" width="40" height="40"  alt="Allure"/></a> |<a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Allure_EE.svg" width="40" height="40"  alt="Allure TestOps"/></a> | <a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Jenkins.svg" width="40" height="40"  alt="Jenkins"/></a> | <a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Github.svg" width="40" height="40"  alt="Github"/></a> |<a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Jira.svg" width="40" height="40"  alt="Jira"/></a> |
+| :---------: | :---------: | :---------: | :---------: | :---------: | :---------: |
+| Selenoid | Allure | Allure TO | Jenkins | Github | Jira |
+
 ## Description
 
 The test automation framework has been developed in [Java](https://go.java/) using a modern technology stack. It contains both API and UI tests. 
@@ -34,16 +44,6 @@ There are several tools are used:
 :heavy_check_mark: Add product to wishlist with API    
 :heavy_check_mark: Add product to cart with API
 
-## Technology Stack
-
-| <a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Intelij_IDEA.svg" width="40" height="40"  alt="IDEA"/></a> | <a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Java.svg" width="40" height="40"  alt="Java"/></a> |<a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/JUnit5.svg" width="40" height="40"  alt="JUnit 5"/></a> | <a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Rest-Assured.svg" width="40" height="40"  alt="RestAssured"/></a> | <a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Gradle.svg" width="40" height="40"  alt="Gradle"/></a> |<a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Selenide.svg" width="40" height="40"  alt="Selenide"/></a> |
-| :---------: | :---------: | :---------: | :---------: | :---------: | :---------: |
-| IDEA | Java | Junit 5 | Rest Assured | Gradle | Selenide |
-
-| <a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Selenoid.svg" width="40" height="40"  alt="Selenoid"/></a> | <a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Allure_Report.svg" width="40" height="40"  alt="Allure"/></a> |<a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Allure_EE.svg" width="40" height="40"  alt="Allure TestOps"/></a> | <a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Jenkins.svg" width="40" height="40"  alt="Jenkins"/></a> | <a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Github.svg" width="40" height="40"  alt="Github"/></a> |<a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Jira.svg" width="40" height="40"  alt="Jira"/></a> |
-| :---------: | :---------: | :---------: | :---------: | :---------: | :---------: |
-| Selenoid | Allure | Allure TO | Jenkins | Github | Jira |
-
 ## Launch the tests
 
 ### To run the tests locally (default):
@@ -58,7 +58,9 @@ clean test
 -Dbrowser={BROWSER_NAME} 
 -DbrowserVersion={BROWSER_VERSION} 
 -DremoteDriverUrl={REMOTE_DRIVER_URL} 
--DvideoStorage={VIDEO_STORAGE_URL} 
+-DvideoStorage={VIDEO_STORAGE_URL}
+-DuserEmail={userEmail}
+-DuserPassword="{userPassword}
 -DwebUrl={WEB_URL}
 -DapiUrl={API_URL}
 -Dthreads={THREADS}
@@ -67,23 +69,28 @@ clean test
 ### Video sample with passing test case:
 ![Selenoid](./images/register.gif)
 
-### - Jenkins job
+### Jenkins job: Possible launch configurations
 ![Jenkins](./images/jenkins.png)
 
-### - Allure report
+### Allure report: Test status and trend graphs
 ![Allure1](./images/alllure_grapths.png)
 ![Allure2](./images/allure_report.png)
 
-### - Allure Test Ops
+### Allure Test Ops: Test result of the launch
+#### There is an example of the failed automated test with attachments.
 ![TestOps1](./images/failed_test.png)
 
-### - Allure Test analytics
+### Allure Test Ops: Test analytics dashboard
 ![Dashboard1](./images/Overview.png)
+
+### Allure Test Ops: Analytics by success rate and duration rate 
 ![Dashboard2](./images/Automatio-types.png)
+
+### Allure Test Ops: Analytics by each team member and their tests
 ![Dashboard3](./images/Dashboard_by_the_team.PNG)
 
-### - Integration with Jira
+### Integration with Jira: Test results and Test launch are attached to the Jira ticket
 ![Jira_1](./images/jira-ticket.png)
 
-### - Telegram notification
+### Telegram notification
 ![Telegram_1](./images/telegram_bot.png)

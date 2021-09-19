@@ -5,7 +5,7 @@ import io.restassured.filter.log.LogDetail;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
-import static com.demowebshop.configuration.env.ApplicationConfigImpl.config;
+import static com.demowebshop.configuration.env.AppConfiguration.config;
 import static io.restassured.RestAssured.with;
 
 public class Specs {

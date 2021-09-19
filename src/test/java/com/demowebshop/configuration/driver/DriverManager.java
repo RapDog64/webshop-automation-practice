@@ -1,11 +1,11 @@
 package com.demowebshop.configuration.driver;
 
 import com.codeborne.selenide.Configuration;
-import com.demowebshop.configuration.env.ApplicationConfigImpl;
+import com.demowebshop.configuration.env.AppConfiguration;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import static com.demowebshop.configuration.env.ApplicationConfigImpl.config;
+import static com.demowebshop.configuration.env.AppConfiguration.config;
 
 public class DriverManager {
 
@@ -25,7 +25,7 @@ public class DriverManager {
         chromeOptions.addArguments("--lang=en-en");
 
 
-        if (ApplicationConfigImpl.isRemoteWebDriver()) {
+        if (AppConfiguration.isRemoteWebDriver()) {
             capabilities.setCapability("enableVNC", true);
             capabilities.setCapability("enableVideo", true);
             Configuration.remote = config.remoteDriverUrl();

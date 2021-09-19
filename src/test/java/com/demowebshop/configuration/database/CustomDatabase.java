@@ -3,7 +3,7 @@ package com.demowebshop.configuration.database;
 import com.demowebshop.model.Genders;
 import com.demowebshop.model.User;
 
-import static com.demowebshop.configuration.env.ApplicationConfigImpl.config;
+import static com.demowebshop.configuration.env.AppConfiguration.config;
 
 import java.util.ArrayList;
 import java.util.List;
