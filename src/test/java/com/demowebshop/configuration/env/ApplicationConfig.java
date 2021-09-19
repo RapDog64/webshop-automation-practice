@@ -11,7 +11,9 @@ public interface ApplicationConfig extends Config {
 
     String userEmail();
     String userPassword();
+    @Key("webUrl")
     String webUrl();
+    @Key("apiUrl")
     String apiUrl();
     String browser();
     String browserVersion();
