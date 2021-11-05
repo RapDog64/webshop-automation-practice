@@ -72,7 +72,9 @@ public class AttachmentManager {
             }
         }
 
-        Allure.addAttachment("Video", "video/mp4", Objects.requireNonNull(videoInputStream), "mp4");
+        if (videoInputStream != null) {
+            Allure.addAttachment("Video", "video/mp4", videoInputStream, "mp4");
+        }
     }
 
     private static Optional<URL> getVideoUrl(String sessionId) {
