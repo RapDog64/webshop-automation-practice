@@ -15,7 +15,6 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.util.Objects;
 import java.util.Optional;
 
 import static com.codeborne.selenide.Selenide.sleep;
@@ -58,7 +57,7 @@ public class AttachmentManager {
         URL videoUrl = getVideoUrl(sessionId).orElseThrow(IllegalArgumentException::new);
 
         InputStream videoInputStream = null;
-        sleep(2000);
+        sleep(1000);
 
         for (int i = 0; i < timeToAddVideoToCI; i++) {
             try {
@@ -72,7 +71,9 @@ public class AttachmentManager {
             }
         }
 
-        Allure.addAttachment("Video", "video/mp4", Objects.requireNonNull(videoInputStream), "mp4");
+        if (videoInputStream != null) {
+            Allure.addAttachment("Video", "video/mp4", videoInputStream, "mp4");
+        }
     }
 
     private static Optional<URL> getVideoUrl(String sessionId) {

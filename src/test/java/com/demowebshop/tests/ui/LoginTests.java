@@ -54,15 +54,14 @@ class LoginTests extends BaseTest {
         headerMenu.getProfileUserEmail(user.getEmail());
     }
 
-    @Story("Log in with incorrect credentials")
-    @DisplayName("User should see unsuccessful login message")
-    @Description("User should see unsuccessful login message if the credentials are invalid")
-    @Tags({@Tag("web"), @Tag("night")})
+    @AllureId("4405")
     @JiraIssue("QC5-12")
     @Severity(SeverityLevel.NORMAL)
-    @ParameterizedTest
-    @AllureId("4405")
+    @Tags({@Tag("web"), @Tag("night")})
+    @Story("Log in with incorrect credentials")
     @CsvSource({"test@emial.com,TEST", "Java@emial.com, JAVA"})
+    @Description("User should see unsuccessful login message if the credentials are invalid")
+    @ParameterizedTest(name = "User should see unsuccessful login message")
     void loginWithIncorrectCredentials(String email, String password) {
         parameter("user email", email);
         parameter("user password", password);
@@ -80,9 +79,8 @@ class LoginTests extends BaseTest {
     @JiraIssue("QC5-12")
     @Story("Log in with invalid credentials")
     @CsvSource({"test432423,TEST", "s##$@#$@#4@emial.com, TEST"})
-    @DisplayName("User should see invalid Email format")
     @Description("User should see invalid Email format message if the email is not in the email format")
-    @ParameterizedTest
+    @ParameterizedTest(name = "User should see invalid Email format")
     void loginWithInvalidEmailFormat(String email, String password) {
         parameter("user email", email);
         parameter("user password", password);
